@@ -12,7 +12,10 @@ __global__ void MatAdd(float *A, float *B,
     int j = blockIdx.y * blockDim.y + threadIdx.y;
 
     // C = A + B (write down your codes)
+    if(i < N && j < N)
+    {
 
+    }
 
 }
 
