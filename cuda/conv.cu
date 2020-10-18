@@ -151,7 +151,6 @@ int main()
     					   &out_c,
     					   &out_h,
     					   &out_w);
-    printf("%d, %d, %d, %d\n", out_n, out_c, out_h, out_w);
 
     Tensor4d h_desc(out_n, out_c, out_h, out_w);
 
@@ -171,7 +170,6 @@ int main()
     					  &returnedAlgoCount,
     					  &perfResults);
     fwd_algo = perfResults.algo;
-    std::cout << "fwd algo:" << fwd_algo << std::endl;
 
     // get workspace size
     cudnnGetConvolutionForwardWorkspaceSize( cudnn_handle,
@@ -182,7 +180,6 @@ int main()
     					     fwd_algo,
     					     &fwd_workspace_size);
     
-    std::cout << fwd_workspace_size << std::endl;
     std::vector<int> u = std::vector<int>{static_cast<int>
 				(fwd_workspace_size / sizeof(float)), 1};
    
